@@ -1,0 +1,3 @@
+[submodule "vendor/jquery-ujs"]
+	path = vendor/jquery-ujs
+	url = https://github.com/rails/jquery-ujs.git

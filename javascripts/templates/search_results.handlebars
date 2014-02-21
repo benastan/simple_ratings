@@ -1,0 +1,11 @@
+{{#response}}
+<ul id="searchResponseVenues">
+  {{#venues}}
+  <li id="venue_{{id}}">
+    <a href="/venues/{{id}}" data-remote=true>
+      {{name}}
+    </a>
+  <div>
+  {{/venues}}
+</ul>
+{{/response}}
