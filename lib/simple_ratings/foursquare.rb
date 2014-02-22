@@ -1,4 +1,5 @@
 require 'faraday'
+require 'simple_ratings/foursquare/meta/venue'
 
 module SimpleRatings
   class Foursquare < Faraday::Connection

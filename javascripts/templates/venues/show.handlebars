@@ -3,7 +3,74 @@
 <div id="venue_{{id}}">
   <h1>
     {{name}}
+
+    {{#meta}}
+    <span class="averageRating">
+      {{averageRating}}
+    </span>
+    {{/meta}}
   </h1>
+  <form id="newRating" action="/venues/{{id}}/rating" method="post" data-remote="true">
+    {{#meta}}
+    {{#oneStar}}
+    <input type="radio" id="rating_stars_1" name="rating[stars]" value="1" checked="checked" />
+    {{/oneStar}}
+    
+    {{^oneStar}}
+    <input type="radio" id="rating_stars_1" name="rating[stars]" value="1" />
+    {{/oneStar}}
+
+    {{#twoStars}}
+    <input type="radio" id="rating_stars_2" name="rating[stars]" value="2" checked="checked" />
+    {{/twoStars}}
+    {{^twoStars}}
+    <input type="radio" id="rating_stars_2" name="rating[stars]" value="2" />
+    {{/twoStars}}
+    
+    {{#threeStars}}
+    <input type="radio" id="rating_stars_3" name="rating[stars]" value="3" checked="checked" />
+    {{/threeStars}}
+    {{^threeStars}}
+    <input type="radio" id="rating_stars_3" name="rating[stars]" value="3" />
+    {{/threeStars}}
+    
+    {{#fourStars}}
+    <input type="radio" id="rating_stars_4" name="rating[stars]" value="4" checked="checked" />
+    {{/fourStars}}
+    {{^fourStars}}
+    <input type="radio" id="rating_stars_4" name="rating[stars]" value="4" />
+    {{/fourStars}}
+    
+    {{#fiveStars}}
+    <input type="radio" id="rating_stars_5" name="rating[stars]" value="5" checked="checked" />
+    {{/fiveStars}}
+    {{^fiveStars}}
+    <input type="radio" id="rating_stars_5" name="rating[stars]" value="5" />
+    {{/fiveStars}}
+    {{/meta}}
+
+    <div class="row">
+      <label class="small-2 column offset-1" for="rating_stars_1">
+        <i class="fa fa-star"></i>
+      </label>
+      
+      <label class="small-2 column" for="rating_stars_2">
+        <i class="fa fa-star"></i>
+      </label>
+
+      <label class="small-2 column" for="rating_stars_3">
+        <i class="fa fa-star"></i>
+      </label>
+
+      <label class="small-2 column" for="rating_stars_4">
+        <i class="fa fa-star"></i>
+      </label>
+
+      <label class="small-2 column end" for="rating_stars_5">
+        <i class="fa fa-star"></i>
+      </label>
+    </div>
+  </form>
 <div>
 {{/venue}}
 {{/response}}

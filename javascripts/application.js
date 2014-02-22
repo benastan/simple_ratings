@@ -21,9 +21,10 @@ $(search).on('ajax:success', function(e, body) {
 });
 
 $(searchResults).on('ajax:success', '#searchResponseVenues a', function(e, body) {
-  var $showVenuePage, response, html, template;
+  var $newRating, $showVenuePage, response, html, template;
 
   $showVenuePage = $(showVenuePage);
+
 
   response = JSON.parse(body);
 
@@ -38,4 +39,26 @@ $(searchResults).on('ajax:success', '#searchResponseVenues a', function(e, body)
     .toggleClass('hide', false)
 
   showVenuePage.children[0].innerHTML = html;
+
+  $newRating = $(newRating);
+
+  $newRating.on('change', 'input[type="radio"]', function() {
+    $newRating.trigger('submit');
+  });
+});
+
+$(document).on('click', 'a', function() {
+  var hash;
+
+  hash = this.href.split('#').slice(-1)[0];
+
+  if (hash == 'searchPage') {
+    $(searchPage)
+      .siblings()
+      .toggleClass('hide', true)
+      .end()
+    .toggleClass('hide', false)
+    
+    return false
+  }
 });

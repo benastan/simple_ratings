@@ -27,10 +27,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rack-test'
   spec.add_development_dependency "foreman"
   
-  # spec.add_dependency 'sequel'
+  spec.add_dependency 'pg'
+  spec.add_dependency 'sequel'
   spec.add_dependency 'sinatra'
   spec.add_dependency 'faraday'
   spec.add_dependency 'sprockets'
+  spec.add_dependency 'sass'
   spec.add_dependency 'sprockets-browserify'
   spec.add_dependency 'handlebars_assets'
 end

@@ -1,0 +1,74 @@
+#newRating {
+  input[type="radio"] {
+    display: none;
+  }
+
+  #rating_stars_1 {
+    &:checked {
+      ~ #rating_stars_2 ~ #rating_stars_3 ~ #rating_stars_4 ~ #rating_stars_5 {
+        ~ div {
+          > label[for="rating_stars_1"] {
+            color: gold;
+          }
+        }
+      }
+    }
+  }
+
+  #rating_stars_2 {
+    &:checked {
+      ~ #rating_stars_3 ~ #rating_stars_4 ~ #rating_stars_5 {
+        ~ div {
+          > label[for="rating_stars_1"], > label[for="rating_stars_2"] {
+            color: gold;
+          }
+        }
+      }
+    }
+  }
+
+  #rating_stars_3 {
+    &:checked {
+      ~ #rating_stars_4 ~ #rating_stars_5 {
+        ~ div {
+          > label[for="rating_stars_1"], > label[for="rating_stars_2"], > label[for="rating_stars_3"] {
+            color: gold;
+          }
+        }
+      }
+    }
+  }
+
+  #rating_stars_4 {
+    &:checked {
+      ~ #rating_stars_5 {
+        ~ div {
+          > label[for="rating_stars_1"], > label[for="rating_stars_2"], > label[for="rating_stars_3"], > label[for="rating_stars_4"] {
+            color: gold;
+          }
+        }
+      }
+    }
+  }
+
+  #rating_stars_5 {
+    &:checked {
+      ~ div {
+        > label[for="rating_stars_1"], > label[for="rating_stars_2"], > label[for="rating_stars_3"], > label[for="rating_stars_4"], > label[for="rating_stars_5"] {
+          color: gold;
+        }
+      }
+    }
+  }
+
+  label {
+    color: white;
+    text-shadow: 0 0 1px black;
+    text-align: center;
+
+    &:hover {
+      color: yellow;
+      text-shadow: 0 0 1px black, 0 0 5px orange;
+    }
+  }
+}
